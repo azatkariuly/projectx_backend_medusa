@@ -17,5 +17,9 @@ module.exports = defineConfig({
   admin: {
     disable: process.env.DISABLE_MEDUSA_ADMIN === "true",
     backendUrl: process.env.MEDUSA_BACKEND_URL,
+    vite: config => {
+      config.server.allowedHosts = ['projectx-backend-server.onrender.com']
+      return config
+    }
   },
 })
